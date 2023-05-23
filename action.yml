@@ -1,0 +1,41 @@
+name: Autoflake Action
+description: Automatically runs autoflake on all your changes.
+
+author: Conrad Großer <grosserconrad@gmail.com>
+
+inputs:
+  commit_message:
+    description: Commit message
+    required: false
+    default: 'Removed unused imports and variables'
+  commit_options:
+    description: Commit options
+    required: false
+  file_pattern:
+    description: File pattern used for `git add`
+    required: false
+    default: '*'
+  checkpath:
+    description: Path autoflake checks
+    required: false
+    default: '.'
+  options:
+    description: Parameters for autoflake
+    required: false
+    default: ''
+  dry:
+    description: Should this script apply autoflake directly or just warn?
+    required: false
+    default: false
+  no_commit:
+    description: Can be used to avoid committing the changes
+    required: false
+    default: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'delete'
+  color: 'green'
