@@ -1,5 +1,10 @@
 # GitHub autoflake Action
 
+[![License MIT](https://img.shields.io/github/license/creyD/autoflake_action)](https://github.com/creyD/autoflake_action/blob/master/LICENSE)
+[![Latest Release](https://img.shields.io/github/v/release/creyD/autoflake_action)](https://github.com/creyD/autoflake_action/releases)
+[![Contributors](https://img.shields.io/github/contributors-anon/creyD/autoflake_action)](https://github.com/creyD/autoflake_action/graphs/contributors)
+[![Issues](https://img.shields.io/github/issues/creyD/autoflake_action)](https://github.com/creyD/autoflake_action/issues)
+
 This GitHub action automatically removes unused imports and variables from your Python code using [autoflake](https://pypi.org/project/autoflake/).
 
 ## Usage
@@ -15,15 +20,14 @@ The following parameters can be used in your custom action configuration.
 | no_commit | :x: | False | Avoid committing, if used in a pipeline |
 | options | :x: | ' ' | Parameters to use with autoflake |
 | dry | :x: | false | Dry-run the action to fail when detecting uncompliant files, instead of automatically fixing them. |
-
+| github_token | :x: | `${{ github.token }}` | The default [GITHUB_TOKEN](https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret) or a [Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
 ### Example
 
 This is a simple usage example of this script:
 
 ```yaml
-# This action works with pull requests and pushes
-name: Continuous Integration
+name: autoflake format
 
 on:
   pull_request:
@@ -37,9 +41,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: creyD/autoflake_action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: creyD/autoflake_action@v1.1
 
 ```
 
