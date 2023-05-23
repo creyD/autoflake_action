@@ -1,6 +1,6 @@
 FROM python:3.11.3-slim-bullseye
 
-RUN apt update && apt add --no-cache bash git openssh python3 py3-pip
+RUN apt update && apt install -y --no-install-recommends bash git openssh python3 py3-pip
 
 RUN pip install --no-cache-dir -q --upgrade pip
 RUN pip install --no-cache-dir -q autoflake
