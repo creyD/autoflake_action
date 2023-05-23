@@ -15,7 +15,7 @@ _git_setup() {
       password $GITHUB_TOKEN
 EOF
     chmod 600 $HOME/.netrc
-    git config --global --add safe.directory /github/workspace
+
     git config --global user.email "actions@github.com"
     git config --global user.name "GitHub Action"
 }
@@ -24,6 +24,8 @@ EOF
 _git_changed() {
     [[ -n "$(git status -s)" ]]
 }
+
+git config --global --add safe.directory /github/workspace
 
 echo "Running autoflake..."
 autoflake $INPUT_CHECKPATH $INPUT_OPTIONS || echo "Problem running autoflake!"
