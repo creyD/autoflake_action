@@ -32,7 +32,7 @@ on:
     - master
 
 jobs:
-  build:
+  format:
     runs-on: ubuntu-latest
 
     steps:
