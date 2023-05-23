@@ -37,7 +37,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: creyD/action_autoflake@master
+    - uses: creyD/autoflake_action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
