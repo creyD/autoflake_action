@@ -15,7 +15,7 @@ _git_setup() {
       password $GITHUB_TOKEN
 EOF
     chmod 600 $HOME/.netrc
-
+    git config --global --add safe.directory /github/workspace
     git config --global user.email "actions@github.com"
     git config --global user.name "GitHub Action"
 }
