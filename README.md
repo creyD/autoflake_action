@@ -46,7 +46,3 @@ jobs:
 ## Issues
 
 Please report all bugs and feature request using the [GitHub issues function](https://github.com/creyD/autoflake_action/issues/new).
-
-## Special Thanks
-
-- Stefan Zweifel [(GitHub)](https://github.com/stefanzweifel) for providing an action to commit and push a git change
